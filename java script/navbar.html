@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Navbar with Search</title>
+  <style>
+    :root{
+      --bg: #0f172a;         /* slate-900 */
+      --bg-2:#111827;        /* gray-900 */
+      --fg: #e5e7eb;         /* gray-200 */
+      --muted:#94a3b8;       /* slate-400 */
+      --accent:#3b82f6;      /* blue-500 */
+      --accent-2:#2563eb;    /* blue-600 */
+      --ring:#60a5fa;        /* blue-400 */
+      --chip:#1f2937;        /* gray-800 */
+      --radius: 10px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: linear-gradient(120deg, var(--bg), var(--bg-2));
+      color: var(--fg);
+      min-height: 100vh;
+    }
+
+    /* NAVBAR */
+    .nav{
+      position: sticky;
+      top:0;
+      z-index: 1000;
+      background: rgba(17,24,39,.7);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(148,163,184,.15);
+    }
+    .nav-inner{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: .75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* Brand */
+    .brand{
+      display:flex;
+      align-items: center;
+      gap:.6rem;
+      font-weight: 700;
+      letter-spacing:.3px;
+      text-decoration: none;
+      color: var(--fg);
+      white-space: nowrap;
+    }
+    .brand-logo{
+      width: 28px; height: 28px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display:inline-block;
+    }
+
+    /* Menu (desktop) */
+    .menu{
+      margin-left: .25rem;
+      display: flex;
+      gap: .75rem;
+    }
+    .menu a{
+      text-decoration: none;
+      color: var(--muted);
+      padding: .5rem .7rem;
+      border-radius: 8px;
+    }
+    .menu a:hover, .menu a:focus{
+      color: var(--fg);
+      background: rgba(148,163,184,.12);
+      outline: none;
+    }
+
+    /* Search */
+    .search{
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--chip);
+      border: 1px solid rgba(148,163,184,.2);
+      padding: .35rem .4rem .35rem .6rem;
+      border-radius: 999px;
+    }
+    .search input{
+      background: transparent;
+      border: none;
+      color: var(--fg);
+      width: 220px;
+      outline: none;
+    }
+    .search input::placeholder{ color: #9ca3af; }
+    .search button{
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+      padding: .45rem .9rem;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .search button:hover{ background: var(--accent-2); }
+    .search:focus-within{
+      box-shadow: 0 0 0 3px rgba(96,165,250,.35);
+    }
+
+    /* Mobile hamburger (CSS-only) */
+    #nav-toggle{ display: none; }
+    .hamburger{
+      display: none;
+      margin-left: auto;
+      width: 42px; height: 38px;
+      border-radius: 10px;
+      border: 1px solid rgba(148,163,184,.25);
+      background: rgba(15,23,42,.6);
+      align-items: center; justify-content: center;
+      cursor: pointer;
+    }
+    .hamburger span, .hamburger::before, .hamburger::after{
+      content: "";
+      display: block;
+      width: 20px; height: 2px;
+      background: var(--fg);
+      border-radius: 2px;
+      transition: transform .25s ease, opacity .2s ease;
+    }
+    .hamburger::before{ transform: translateY(-6px); }
+    .hamburger::after{ transform: translateY(6px); }
+
+    /* Mobile layout */
+    @media (max-width: 800px){
+      .search{ display:none; }
+      .hamburger{ display:flex; }
+      .menu{
+        position: fixed;
+        left: 0; right:0;
+        top: 58px;
+        background: rgba(17,24,39,.98);
+        flex-direction: column;
+        padding: .75rem;
+        transform: translateY(-20px);
+        opacity: 0;
+        pointer-events: none;
+        border-bottom: 1px solid rgba(148,163,184,.15);
+      }
+      .menu a{ padding: .85rem; font-size: 1rem; }
+      #nav-toggle:checked ~ .menu{
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #nav-toggle:checked + label.hamburger span{ opacity: 0; }
+      #nav-toggle:checked + label.hamburger::before{ transform: rotate(45deg); }
+      #nav-toggle:checked + label.hamburger::after{ transform: rotate(-45deg); }
+      .nav-inner{ gap: .5rem; }
+    }
+
+    /* Optional content just for demo page spacing */
+    .hero{
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      line-height: 1.6;
+      color: #d1d5db;
+    }
+
+    /* Accessibility focus styles */
+    a:focus, button:focus{
+      outline: 3px solid var(--ring);
+      outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{ transition:none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="brand" href="#">
+        <span class="brand-logo" aria-hidden="true"></span>
+        DevBrand
+      </a>
+
+      <!-- mobile toggle -->
+      <input type="checkbox" id="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="hamburger" aria-label="Toggle menu">
+        <span></span>
+      </label>
+
+      <!-- links -->
+      <div class="menu" role="menubar">
+        <a role="menuitem" href="#">Home</a>
+        <a role="menuitem" href="#">Products</a>
+        <a role="menuitem" href="#">Pricing</a>
+        <a role="menuitem" href="#">About</a>
+        <a role="menuitem" href="#">Contact</a>
+      </div>
+
+      <!-- search -->
+      <form class="search" role="search" action="#" method="get" aria-label="Site search">
+        <input type="search" name="q" placeholder="Search…" aria-label="Search" />
+        <button type="submit" aria-label="Submit search">
+          <!-- search icon (inline SVG) -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+            <path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </nav>
+
+  <main class="hero">
+    <h1>Responsive Navbar with Search</h1>
+    <p>
+      Resize the window to see the hamburger menu on mobile. The search field is keyboard-accessible and uses a
+      semantic <code>&lt;form role="search"&gt;</code>.
+    </p>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:link{
+            background-color: aqua;
+        }
+        a:active{
+            color: red;
+            background: pink;
+        }
+        input[type="radio"]:checked{
+            height: 50px;
+            width: 50px;
+            /* accent-color:blue; */
+        }
+        input[type="checkbox"]:checked
+        {accent-color: pink;
+        height: 50px;
+    width: 50px;}
+        
+        
+    </style>
+</head>
+<body>
+    <a href="https://www.youtube.com/" target="_blank">click for youtube</a>
+<br>
+    <label for="gen">gendre</label>
+    <input type="radio" name="gen">male
+    <input type="radio" name="gen">female
+    <input type="radio" name="gen">others
+
+    <br>
+    <label for="hob">hobbies</label>
+    <input type="checkbox" name="hob">male
+    <input type="checkbox" name="hob">female
+    <input type="checkbox" name="hob">others
+    </body>
+</html>

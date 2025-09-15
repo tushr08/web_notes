@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: blueviolet;
+        }
+        .box{
+            background-color: aqua;
+            height: 250px;
+            width: 250px;
+            position: relative;
+
+            animation-name: tushar;
+            animation-duration: 4s;
+            animation: tushar 1s ease-in-out 2s 6 ;
+
+        }
+        /* @keyframes tushar{
+            from{width: 250px;}
+            to{ width:1000px;}
+        } */
+         @keyframes tushar{
+            0%{top: 0px;
+            left: 0px;}
+            25%{top: 250px;
+            left: 0px;}
+            50%{top: 250px;
+            left: 250px;}
+            75%{top: 0px;
+            left: 250px;}
+            100%{left: 500px;
+            top: 0px;
+        background-color: black;}
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

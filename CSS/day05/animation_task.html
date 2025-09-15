@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .demo{background-color: grey;
+        width: 100%;
+        text-align: center;
+    }
+    .demo1{
+        height: 500px;
+        width: 250px;
+        border: dotted;
+        text-align: center;
+        background-color: aliceblue;
+        margin-left: 40%;
+
+    }
+    .demo2{
+        height: 125px;
+        width: 125px;
+        background-color: cornflowerblue;
+        border-radius: 10px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 60px;
+
+        animation-name: tushar;
+        animation-duration: 2s;
+        
+        animation: tushar 2s ease-in-out 1s 5 alternate ;
+    }
+
+    @keyframes tushar{
+        from{top: 0px}
+        to{top: 375px}
+    }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <div class="demo1"><div class="demo2">BOUNCE</div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{border: 3px solid black;
+    height: 360px;}
+    h1{border: 4px solid black;height: 50px;text-align: center;}
+    h2{border: 3px solid black;text-align: center;}
+    h3:last-of-type{ color: red;}
+    h1:last-child{border: 3px solid black; height: 80px;}
+    h1::first-letter{color: red;}
+    h3:last-of-type{margin-left: 500px;margin-top: -100px;}
+    nav{text-align: center;
+    border: 2px solid black;}
+    nav a {
+       display: inline-block; /* or block */
+   }
+    nav a::first-letter{
+     color: red;
+   }
+   nav a + a::first-letter{
+     color: blue;
+   }
+    nav a + a+a::first-letter{
+     color: green;
+   }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1><mark>😊</mark>THE HINDU<mark>😊</mark></h1>
+        <nav>
+            <a href="">Home</a>
+            <a href="">Login</a>
+            <a href="">Regester</a>
+        </nav>
+        <h3><mark>😊</mark>1 Lorem ipsum dolor sit amet.</h3>
+        <h3><mark>🤣</mark>2 Lorem ipsum dolor sit amet.</h3>
+        <h3><mark>♥️</mark>3 Lorem ipsum dolor sit amet.</h3>
+        <h3><mark>😘</mark>4 Lorem ipsum dolor sit amet.</h3>
+        <h3><mark>👍</mark>5 Lorem ipsum dolor sit amet.</h3>
+        <br>
+        <br>
+        <h3>Lorem ipsum dolor sit amet consectetur <br>adipisicing elit. Voluptate, modi!</h3>
+        <br><br>
+        <h1>Bye Bye</h1>
+        
+    </div>
+</body>
+</html>

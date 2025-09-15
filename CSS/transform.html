@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        position: relative;
+       left: 200px;
+       top: 200px;
+        border: 3px solid;
+      }
+      .translate-box {
+        background-color: red   ;
+        height: 200px;
+        width: 200px;
+        transition: transform 1s;
+      }
+      .translate-box:hover {
+        transform: translate(-50px, -50px);
+      }
+      /* ================================================= */
+
+      .scale-box {
+        background-color: rgb(0, 255, 38)   ;
+        height: 200px;
+        width: 200px;
+        transition: transform 1s;
+      }
+      .scale-box:hover {
+        transform: scale(0.9);
+      }
+
+      .combined-box {
+        background-color: pink   ;
+        height: 200px;
+        width: 200px;
+        transition: transform 10s;
+      }
+      .combined-box:hover {
+        transform: scale(1.5) skew(180deg,180deg) rotate(70deg) translate(150px,160px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="translate-box">transform</div>
+<br>
+    <div class="scale-box">transform</div>
+    <br>
+    <div class="combined-box">transform</div>
+  </body>
+</html>

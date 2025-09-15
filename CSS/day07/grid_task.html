@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .containor{
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(3,150px);
+
+        }
+        .grid-item{
+            border: 3px solid;
+            background-color: aquamarine;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #grid-1{
+            background-color: aqua;
+            grid-row: span 3;
+
+        }
+        #grid-2{
+            background-color: pink;
+            grid-column: span 2;
+        }
+        #grid-3{
+            background-color: blue;
+        }
+        #grid-4{
+            background-color: purple;
+        }
+        #grid-5{
+            background-color: red;
+        }
+        #grid-6{
+            background-color: green;
+            grid-row: span 2;
+        }
+        #grid-7{
+            background-color: yellowgreen;
+        }
+        #grid-8{
+            background-color: orange;
+        }
+        #grid-9{
+            background-color: grey;
+        }
+        #grid-10{
+            background-color: brown;
+        }
+        #grid-11{
+            background-color: burlywood;
+        }
+        #grid-12{
+            background-color: skyblue;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="containor">
+        <div class="grid-item" id="grid-1">box 1</div>
+        <div class="grid-item" id="grid-2">box 2</div>
+        <div class="grid-item" id="grid-3">box 3</div>
+        <div class="grid-item" id="grid-4">box 4</div>
+        <div class="grid-item" id="grid-5">box 5</div>
+        <div class="grid-item" id="grid-6">box 6</div>
+        <div class="grid-item" id="grid-7">box 7</div>
+        <div class="grid-item" id="grid-8">box 8</div>
+        <div class="grid-item" id="grid-9">box 9</div>
+        <div class="grid-item" id="grid-10">box 10</div>
+        <div class="grid-item" id="grid-11">box 11</div>
+        <div class="grid-item" id="grid-12">box 12</div>
+    </div>
+</body>
+</html>

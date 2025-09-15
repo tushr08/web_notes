@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="radio"]:checked{
+            height: 10px;
+            width: 10px;
+            outline: 2px solid red;
+        }
+        input[type="checkbox"]:checked{
+            height: 10px;
+            width: 10px;
+            accent-color:yellow;    
+        }
+         input[type="checkbox"]:checked + label {
+           color: green;   
+        }
+        form{
+            background: grey;
+        }
+        a:link{
+            background: grey;
+        }
+        input[type="text"]:focus{
+            width: 200px;
+            border:2px solid red;
+            outline: none;
+        }
+        button:hover{
+            background: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>
+        Pseudo Class Selector Task
+    </h1>
+    <br>
+    <a href="https://www.youtube.com/">Click For youtube</a>
+    <br><br>
+    <form action="">
+    <label for="gen">Gender:</label>
+    <br>
+    <input type="radio" name="gen">Male
+    <input type="radio" name="gen">Female
+    <input type="radio" name="gen">Others
+
+    <br>
+    <label for="hob">Hobbies:</label>
+    <br>
+    <input type="checkbox" name="hob">playing cricket
+    <input type="checkbox" name="hob">dancing
+    <input type="checkbox" name="hob">singing
+    <br>
+    <br>
+    address: <input type="text">
+    <br>
+    <button>submit</button>
+    </form>
+
+    
+
+</body>
+</html>
